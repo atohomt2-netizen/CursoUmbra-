@@ -1,0 +1,147 @@
+/* Componentes: tarjetas, tablas, evaluación, diploma */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.card,
+.box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+}
+.tag {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--ac);
+  color: #111;
+  font-weight: 700;
+}
+.tag.off {
+  background: var(--line);
+  color: var(--mut);
+}
+label {
+  display: block;
+  margin: 12px 0 4px;
+  font-weight: 600;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #0e0e0e;
+  color: var(--tx);
+  font-size: 1rem;
+}
+.opt {
+  display: block;
+  font-weight: 400;
+  margin: 6px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.vid {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  background: #000;
+}
+figure {
+  margin: 16px 0;
+}
+figure svg,
+video {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+}
+figcaption {
+  color: var(--mut);
+  font-size: 0.85rem;
+}
+.q {
+  margin: 18px 0;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.q.ok {
+  border-color: var(--ok);
+}
+.q.bad {
+  border-color: var(--bad);
+}
+.nota {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+}
+.diploma {
+  background: #fffaf0;
+  color: #2b2b2b;
+  border: 10px double #b22222;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 6px;
+  font-family: Georgia, serif;
+}
+.diploma h2 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #871a1a;
+}
+.diploma .n {
+  font-size: 2rem;
+  border-bottom: 2px solid #2b2b2b;
+  display: inline-block;
+  padding: 0 24px;
+  margin: 12px 0;
+}
+footer {
+  color: var(--mut);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 24px;
+}
+.bar {
+  height: 8px;
+  background: var(--line);
+  border-radius: 9px;
+}
+.bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--ac);
+  border-radius: 9px;
+  transition: 0.3s;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .diploma,
+  .diploma * {
+    visibility: visible;
+  }
+  .diploma {
+    position: absolute;
+    inset: 0;
+  }
+}

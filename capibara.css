@@ -1,0 +1,260 @@
+/* From Uiverse.io by Novaxlo
+   (.loader se renombró .cb-ground para no chocar con el personaje de la portada;
+   se usan colores directos en lugar de variables CSS) */
+.capybaraloader,
+.capybara,
+.cb-ground,
+.capy,
+.capyhead,
+.capyear,
+.capyear2,
+.capymouth,
+.capylips,
+.capyeye,
+.capyleg,
+.capyleg2,
+.loaderline {
+  box-sizing: content-box;
+}
+.capybaraloader {
+  width: 14em;
+  height: 10em;
+  position: relative;
+  z-index: 1;
+  transform: scale(0.75);
+  margin: 24px auto 0;
+  font-size: 16px;
+}
+.capybara {
+  width: 100%;
+  height: 7.5em;
+  position: relative;
+  z-index: 1;
+}
+.cb-ground {
+  width: 100%;
+  height: 2.5em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.capy {
+  width: 85%;
+  height: 100%;
+  background: linear-gradient(
+    rgb(204, 125, 45) 0%,
+    rgb(203, 124, 45) 50%,
+    rgb(200, 123, 44) 60%,
+    rgb(192, 118, 43) 70%,
+    rgb(176, 109, 41) 80%,
+    rgb(162, 101, 39) 85%,
+    rgb(144, 90, 36) 90%,
+    rgb(118, 76, 33) 95%,
+    rgb(83, 56, 28) 100%
+  );
+  border-radius: 45%;
+  position: relative;
+  z-index: 1;
+  animation: movebody 1s linear infinite;
+}
+.capyhead {
+  width: 7.5em;
+  height: 7em;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-color: rgb(204, 125, 45);
+  z-index: 3;
+  border-radius: 3.5em;
+  box-shadow: -1em 0 rgb(83, 56, 28);
+  animation: movebody 1s linear infinite;
+}
+.capyear {
+  width: 2em;
+  height: 2em;
+  background: linear-gradient(
+    -45deg,
+    rgb(204, 125, 45) 0%,
+    rgb(203, 124, 45) 50%,
+    rgb(200, 123, 44) 60%,
+    rgb(192, 118, 43) 70%,
+    rgb(176, 109, 41) 80%,
+    rgb(162, 101, 39) 85%,
+    rgb(144, 90, 36) 90%,
+    rgb(118, 76, 33) 95%,
+    rgb(83, 56, 28) 100%
+  );
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: 3;
+}
+.capyear:nth-child(2) {
+  left: 5em;
+  background: linear-gradient(
+    25deg,
+    rgb(204, 125, 45) 0%,
+    rgb(203, 124, 45) 50%,
+    rgb(200, 123, 44) 60%,
+    rgb(192, 118, 43) 70%,
+    rgb(176, 109, 41) 80%,
+    rgb(162, 101, 39) 85%,
+    rgb(144, 90, 36) 90%,
+    rgb(118, 76, 33) 95%,
+    rgb(83, 56, 28) 100%
+  );
+}
+.capyear2 {
+  width: 100%;
+  height: 1em;
+  background-color: rgb(83, 56, 28);
+  bottom: 0;
+  left: 0.5em;
+  border-radius: 100%;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+.capymouth {
+  width: 3.5em;
+  height: 2em;
+  background-color: rgb(83, 56, 28);
+  position: absolute;
+  bottom: 0;
+  left: 2.5em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em;
+}
+.capylips {
+  width: 0.25em;
+  height: 0.75em;
+  border-radius: 100%;
+  transform: rotate(-45deg);
+  background-color: rgb(204, 125, 45);
+}
+.capylips:nth-child(2) {
+  transform: rotate(45deg);
+}
+.capyeye {
+  width: 2em;
+  height: 0.5em;
+  background-color: rgb(83, 56, 28);
+  position: absolute;
+  bottom: 3.5em;
+  left: 1.5em;
+  border-radius: 5em;
+  transform: rotate(45deg);
+}
+.capyeye:nth-child(4) {
+  transform: rotate(-45deg);
+  left: 5.5em;
+  width: 1.75em;
+}
+.capyleg {
+  width: 6em;
+  height: 5em;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: linear-gradient(
+    rgb(204, 125, 45) 0%,
+    rgb(204, 125, 45) 50%,
+    rgb(204, 125, 45) 60%,
+    rgb(203, 124, 45) 70%,
+    rgb(198, 122, 44) 80%,
+    rgb(191, 117, 43) 85%,
+    rgb(175, 108, 41) 90%,
+    rgb(144, 90, 36) 95%,
+    rgb(83, 56, 28) 100%
+  );
+  z-index: 2;
+  border-radius: 2em;
+  animation: movebody 1s linear infinite;
+}
+.capyleg2 {
+  width: 1.75em;
+  height: 3em;
+  bottom: 0;
+  left: 3.25em;
+  position: absolute;
+  background: linear-gradient(
+    rgb(204, 125, 45) 0%,
+    rgb(190, 117, 43) 50%,
+    rgb(179, 111, 42) 60%,
+    rgb(164, 102, 39) 70%,
+    rgb(144, 90, 36) 80%,
+    rgb(131, 83, 35) 85%,
+    rgb(117, 75, 33) 90%,
+    rgb(101, 66, 31) 95%,
+    rgb(83, 56, 28) 100%
+  );
+  z-index: 2;
+  border-radius: 0.75em;
+  box-shadow: inset 0 -0.5em rgb(83, 56, 28);
+  animation: moveleg 1s linear infinite;
+}
+.capyleg2:nth-child(3) {
+  width: 1.25em;
+  left: 0.5em;
+  height: 2em;
+  animation: moveleg2 1s linear infinite 0.075s;
+}
+@keyframes moveleg {
+  0% {
+    transform: rotate(-45deg) translateX(-5%);
+  }
+  50% {
+    transform: rotate(45deg) translateX(5%);
+  }
+  100% {
+    transform: rotate(-45deg) translateX(-5%);
+  }
+}
+@keyframes moveleg2 {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes movebody {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.loaderline {
+  width: 50em;
+  height: 0.5em;
+  border-top: 0.5em dashed rgb(83, 56, 28);
+  animation: moveline 10s linear infinite;
+}
+@keyframes moveline {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-70%);
+  }
+}

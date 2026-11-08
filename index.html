@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+<title>Instituto Umbra – Cursos en línea</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/botones.css">
+<link rel="stylesheet" href="css/registro.css">
+<link rel="stylesheet" href="css/personaje.css">
+<link rel="stylesheet" href="css/capibara.css">
+<link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+<!-- INICIO -->
+<section id="inicio" class="v">
+  <div class="container hero">
+    <div class="in">
+      <h1>INSTITUTO UMBRA</h1>
+      <p>Aprende a defenderte en la oscuridad digital. Cursos en línea de ciberseguridad con evaluación y diploma.</p>
+      <button class="btn" onclick="show('registro')">Inscribirme ahora</button>
+      <a href="#cursos" style="margin-top:14px;color:#ddd" onclick="document.getElementById('cursos').scrollIntoView({behavior:'smooth'});return false">Ver cursos ↓</a>
+    </div>
+    <div class="walker" aria-hidden="true"><div class="loader">
+      <svg id="gnd" width="420" height="40" viewBox="0 0 420 40"><line x1="0" y1="10" x2="420" y2="10" stroke="#fec195" stroke-width="4" stroke-dasharray="46 34" stroke-linecap="round"/><line x1="20" y1="28" x2="420" y2="28" stroke="#fec195" stroke-width="3" stroke-dasharray="24 40" stroke-linecap="round"/></svg>
+      <svg class="legr" width="50" height="62" viewBox="0 0 50 62"><rect x="15" y="0" width="20" height="46" rx="10" fill="#7c2020"/><ellipse cx="29" cy="52" rx="18" ry="8" fill="#ddd"/></svg>
+      <svg class="legl" width="50" height="62" viewBox="0 0 50 62"><rect x="15" y="0" width="20" height="46" rx="10" fill="#b22222"/><ellipse cx="29" cy="52" rx="18" ry="8" fill="#fff"/></svg>
+      <svg class="bod" width="140" height="140" viewBox="0 0 140 140"><path d="M45 42q-24 24-8 52" stroke="#d94a30" stroke-width="16" stroke-linecap="round" fill="none"/><rect x="30" y="20" width="80" height="95" rx="22" fill="#ff6347"/><path d="M96 42q26 22 10 52" stroke="#ff6347" stroke-width="16" stroke-linecap="round" fill="none"/><circle cx="105" cy="97" r="8" fill="#fec195"/></svg>
+      <svg class="head" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="56" r="34" fill="#fec195"/><path d="M16 50a34 34 0 0 1 68 0z" fill="#b22222"/><rect x="11" y="46" width="78" height="10" rx="5" fill="#871a1a"/><circle cx="67" cy="66" r="4" fill="#111"/><path d="M56 78q10 7 20 0" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+    </div></div>
+  </div>
+  <div class="wrap" id="cursos">
+    <h2>Cursos que ofrecemos</h2>
+    <div class="grid">
+      <div class="card"><span class="tag">Disponible</span><h3>Introducción a la Ciberseguridad</h3><p>Phishing, contraseñas, malware y navegación segura. 3 módulos + evaluación de 6 preguntas.</p><button class="btn" onclick="show('registro')">Registrarme</button></div>
+      <div class="card"><span class="tag off">Próximamente</span><h3>Redes Seguras</h3><p>Firewalls, VPN y protección de redes domésticas y empresariales.</p></div>
+      <div class="card"><span class="tag off">Próximamente</span><h3>Hacking Ético Básico</h3><p>Fundamentos de pruebas de penetración con herramientas de código abierto.</p></div>
+    </div>
+    <h2>Historial de evaluaciones (base de datos)</h2>
+    <div class="box" id="historial">Cargando…</div>
+  </div>
+  <footer>Proyecto: Plataforma de cursos en línea · Autor: <b>Tu nombre</b> · HTML, CSS y JavaScript · Noviembre 2026</footer>
+</section>
+
+<!-- REGISTRO -->
+<section id="registro" class="v" hidden><div class="wrap">
+  <button class="btn sec" onclick="show('inicio')">← Volver</button>
+  <div class="reg-wrap">
+  <form id="fReg" class="reg-form" onsubmit="return false" autocomplete="off">
+    <span class="reg-title">Registro</span>
+    <input class="reg-input" type="text" id="nombre" placeholder="Nombres" required>
+    <input class="reg-input" type="text" id="apellido" placeholder="Apellidos" required>
+    <input class="reg-input" type="email" id="email" placeholder="Correo electrónico" required>
+    <span class="reg-lbl">Fecha de nacimiento</span>
+    <input class="reg-input" type="date" id="nac" required style="margin-top:0">
+    <input class="reg-input" type="text" id="pais" list="paises" placeholder="País" required>
+    <datalist id="paises"><option value="Guatemala"><option value="México"><option value="El Salvador"><option value="Honduras"><option value="Costa Rica"><option value="Otro"></datalist>
+    <input class="reg-input" type="text" id="curso" value="Introducción a la Ciberseguridad" readonly aria-label="Curso">
+    <button class="btn" type="button" onclick="registrar()" style="margin-top:2rem">Registrarme</button>
+  </form>
+  </div>
+</div></section>
+
+<!-- DATOS -->
+<section id="datos" class="v" hidden><div class="wrap">
+  <h2>¡Registro exitoso!</h2>
+  <div class="box"><table id="tDatos"></table></div>
+  <p><button class="btn" onclick="iniciarCurso()">Acceder al curso →</button></p>
+</div></section>
+
+<!-- CURSO -->
+<section id="curso-v" class="v" hidden><div class="wrap">
+  <h2>Introducción a la Ciberseguridad</h2>
+  <div class="bar"><i id="prog"></i></div>
+
+  <h3>Módulo 1: ¿Qué es la ciberseguridad?</h3>
+  <p>La ciberseguridad protege sistemas, redes y datos frente a ataques digitales. Su objetivo se resume en la tríada <b>CIA</b>: Confidencialidad, Integridad y Disponibilidad. Consulta alertas oficiales en <a href="https://www.cisa.gov" target="_blank" rel="noopener">CISA</a> y guías para ciudadanos en <a href="https://www.incibe.es/ciudadania" target="_blank" rel="noopener">INCIBE</a>.</p>
+  <figure>
+    <svg viewBox="0 0 400 140" role="img" aria-label="Triada CIA"><rect width="400" height="140" fill="#1b1b1b"/><g fill="#ff6347"><circle cx="90" cy="70" r="45"/><circle cx="200" cy="70" r="45" fill="#b22222"/><circle cx="310" cy="70" r="45" fill="#d2b48c"/></g><g fill="#111" font-family="sans-serif" font-size="13" font-weight="700" text-anchor="middle"><text x="90" y="74">Confidencial.</text><text x="200" y="74">Integridad</text><text x="310" y="74">Disponibilidad</text></g></svg>
+    <figcaption>Imagen 1. La tríada CIA.</figcaption>
+  </figure>
+  <figure>
+    <iframe class="vid" src="https://www.youtube-nocookie.com/embed/VkS56Zz-iEo" title="Video: fundamentos de ciberseguridad" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <figcaption>Video 1. <a href="https://www.youtube.com/watch?v=VkS56Zz-iEo" target="_blank" rel="noopener">Ver en YouTube</a> si no se reproduce aquí.</figcaption>
+  </figure>
+
+  <h3>Módulo 2: Amenazas comunes</h3>
+  <p><a href="https://es.wikipedia.org/wiki/Phishing" target="_blank" rel="noopener"><b>Phishing</b></a>: mensajes falsos que suplantan a una entidad para robar tus datos. <a href="https://es.wikipedia.org/wiki/Ransomware" target="_blank" rel="noopener"><b>Ransomware</b></a>: malware que cifra tus archivos y exige un rescate. <a href="https://es.wikipedia.org/wiki/Malware" target="_blank" rel="noopener"><b>Malware</b></a>: software malicioso en general. Conoce las vulnerabilidades web más comunes en <a href="https://owasp.org" target="_blank" rel="noopener">OWASP</a>.</p>
+  <figure>
+    <svg viewBox="0 0 400 190" role="img" aria-label="Ejemplo de correo de phishing"><rect width="400" height="190" fill="#1b1b1b"/><rect x="20" y="15" width="360" height="160" rx="8" fill="#fffaf0"/><rect x="20" y="15" width="360" height="30" rx="8" fill="#b22222"/><g font-family="sans-serif" font-size="12" fill="#222"><text x="32" y="35" fill="#fff" font-weight="700">De: soporte@banc0-seguro.com</text><text x="32" y="68" font-weight="700">¡Tu cuenta será bloqueada!</text><text x="32" y="90">Ingresa ahora para verificar tus datos:</text></g><rect x="32" y="102" width="150" height="26" rx="5" fill="#ff6347"/><text x="107" y="119" font-family="sans-serif" font-size="12" font-weight="700" fill="#111" text-anchor="middle">Verificar cuenta</text><g stroke="#b22222" stroke-width="2" fill="none"><circle cx="40" cy="145" r="0"/><path d="M215 40l20 25M250 28l-12 28"/></g><text x="32" y="155" font-family="sans-serif" font-size="11" fill="#b22222">Señales: dominio falso, urgencia, enlace sospechoso</text></svg>
+    <figcaption>Imagen 2. Ejemplo de correo de phishing y sus señales de alerta.</figcaption>
+  </figure>
+  <figure>
+    <iframe class="vid" src="https://www.youtube-nocookie.com/embed/11Ww1WF0-0s" title="Video: malware" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <figcaption>Video 2. <a href="https://www.youtube.com/watch?v=11Ww1WF0-0s" target="_blank" rel="noopener">Ver en YouTube</a> si no se reproduce aquí.</figcaption>
+  </figure>
+
+  <h3>Módulo 3: Buenas prácticas</h3>
+  <ul>
+    <li>Usa contraseñas largas (mínimo 12 caracteres) y un gestor de contraseñas.</li>
+    <li>Activa la autenticación de dos factores (<b>2FA</b>).</li>
+    <li>Verifica que los sitios usen <b>HTTPS</b> (protocolo cifrado).</li>
+    <li>Actualiza tu software y desconfía de enlaces inesperados.</li>
+    <li>Revisa si tu correo fue filtrado en <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">Have I Been Pwned</a>.</li>
+  </ul>
+  <figure>
+    <svg viewBox="0 0 400 130" role="img" aria-label="Candado y escudo"><rect width="400" height="130" fill="#1b1b1b"/><rect x="95" y="55" width="60" height="50" rx="6" fill="#ff6347"/><path d="M105 55V43a20 20 0 0 1 40 0v12" fill="none" stroke="#d2b48c" stroke-width="8"/><circle cx="125" cy="77" r="6" fill="#111"/><path d="M270 20l55 15v35c0 30-25 45-55 55-30-10-55-25-55-55V35z" fill="#b22222" stroke="#d2b48c" stroke-width="4" transform="translate(-25 -5)"/><path d="M247 70l16 16 30-34" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <figcaption>Imagen 3. Contraseñas fuertes y protección activa.</figcaption>
+  </figure>
+
+  <h3>Recursos para seguir aprendiendo</h3>
+  <ul>
+    <li><a href="https://www.cisa.gov/secure-our-world" target="_blank" rel="noopener">CISA: Secure Our World</a></li>
+    <li><a href="https://www.incibe.es/ciudadania" target="_blank" rel="noopener">INCIBE: ciberseguridad para ciudadanos</a></li>
+    <li><a href="https://owasp.org" target="_blank" rel="noopener">OWASP: seguridad de aplicaciones web</a></li>
+  </ul>
+  <p><button class="btn" onclick="iniciarExamen()">Ir a la evaluación →</button></p>
+</div></section>
+
+<!-- EXAMEN -->
+<section id="examen" class="v" hidden><div class="wrap">
+  <h2>Evaluación</h2>
+  <form id="fEx" onsubmit="return false">
+    <div class="q" id="q1"><b>1. ¿Qué es el phishing?</b> (opción única)
+      <label class="opt"><input type="radio" name="q1" value="a"> Un tipo de antivirus</label>
+      <label class="opt"><input type="radio" name="q1" value="b"> Suplantación de identidad, usualmente por correo, para robar datos</label>
+      <label class="opt"><input type="radio" name="q1" value="c"> Un error de hardware</label></div>
+    <div class="q" id="q2"><b>2. Selecciona las buenas prácticas de contraseñas</b> (varias respuestas)
+      <label class="opt"><input type="checkbox" name="q2" value="a"> Usar un gestor de contraseñas</label>
+      <label class="opt"><input type="checkbox" name="q2" value="b"> Reutilizar la misma en todos los sitios</label>
+      <label class="opt"><input type="checkbox" name="q2" value="c"> Activar autenticación de dos factores</label>
+      <label class="opt"><input type="checkbox" name="q2" value="d"> Usar 12 caracteres o más</label></div>
+    <div class="q" id="q3"><b>3. ¿Qué significa HTTPS?</b> (lista desplegable)
+      <select name="q3"><option value="">Selecciona…</option><option value="a">Un lenguaje de programación</option><option value="b">Protocolo de transferencia de hipertexto con cifrado</option><option value="c">Un tipo de virus</option></select></div>
+    <div class="q" id="q4"><b>4. ¿Cómo se llama el malware que cifra archivos y pide rescate?</b> (cuadro de lista)
+      <select name="q4" size="4"><option value="a">Adware</option><option value="b">Spyware</option><option value="c">Ransomware</option><option value="d">Firewall</option></select></div>
+    <div class="q" id="q5"><b>5. ¿Qué sigla identifica la verificación con un segundo paso (ej. código al celular)?</b> (texto)
+      <input type="text" name="q5" placeholder="Escribe la sigla"></div>
+    <div class="q" id="q6"><b>6. ¿Cuántos caracteres mínimos recomiendas para una contraseña segura?</b> (control deslizante): <b id="rv">8</b>
+      <input type="range" name="q6" min="4" max="24" value="8" style="width:100%" oninput="rv.textContent=this.value"></div>
+    <button class="btn" type="button" onclick="calificar()">Enviar evaluación</button>
+  </form>
+</div></section>
+
+<!-- RESULTADO -->
+<section id="resultado" class="v" hidden><div class="wrap" style="text-align:center">
+  <h2>Resultado</h2>
+  <p class="nota" id="nota"></p><p id="msg"></p>
+  <p><button class="btn sec" onclick="show('curso-v')">Repasar curso</button> <button class="btn" id="bRe" onclick="iniciarExamen()">Reintentar</button> <button class="btn" onclick="show('inicio');cargarHist()">Inicio</button></p>
+  <div id="dip" hidden>
+    <div class="diploma"><p>INSTITUTO UMBRA</p><h2>Diploma de Aprobación</h2><p>Se otorga a</p><div class="n" id="dNom"></div>
+      <p>por aprobar el curso <b>Introducción a la Ciberseguridad</b><br>con una calificación de <b id="dNota"></b> / 10</p><p id="dFecha"></p><small id="dFolio"></small></div>
+    <p><button class="btn" onclick="window.print()">Imprimir / Guardar PDF</button></p>
+  </div>
+</div></section>
+
+<script src="js/utilidades.js"></script>
+<script src="js/basedatos.js"></script>
+<script src="js/registro.js"></script>
+<script src="js/evaluacion.js"></script>
+<script src="js/efectos.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+/* From Uiverse.io by HoseinParvaresh
+   (acotado a .reg-form; el botón conserva el estilo del sitio) */
+.reg-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
+.reg-form {
+  width: 400px;
+  max-width: 100%;
+  background-image: linear-gradient(to bottom, #424242, #212121);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  padding-bottom: 2.5rem;
+}
+.reg-form ::selection {
+  background-color: gray;
+}
+.reg-title {
+  color: wheat;
+  margin: 3rem 0 2rem;
+  font-size: 2rem;
+}
+.reg-form .reg-input {
+  margin: 0.5rem 0;
+  padding: 1rem 0.5rem;
+  width: 20rem;
+  max-width: 90%;
+  background-color: inherit;
+  color: wheat;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  border-bottom: 1px solid wheat;
+  transition: all 400ms;
+  font-size: 1rem;
+}
+.reg-form .reg-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+.reg-form .reg-input::placeholder {
+  color: #c9b896;
+}
+.reg-form .reg-input:hover {
+  background-color: #424242;
+  border: none;
+  border-radius: 0.5rem;
+}
+.reg-lbl {
+  width: 20rem;
+  max-width: 90%;
+  color: #c9b896;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}

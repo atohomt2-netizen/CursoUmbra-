@@ -1,0 +1,104 @@
+/* From Uiverse.io by adamgiebl */
+.container {
+  width: 100%;
+  height: 100%;
+  --color: rgba(114, 114, 114, 0.3);
+  background-color: #191a1a;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+}
+
+/* ---------- Estilos del sitio ---------- */
+:root {
+  --bg: #111;
+  --panel: #1b1b1b;
+  --line: #333;
+  --tx: #eee;
+  --mut: #a9a9a9;
+  --ac: #ff6347;
+  --ok: #4caf50;
+  --bad: #e5484d;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--tx);
+  font:
+    16px/1.6 system-ui,
+    Segoe UI,
+    Arial,
+    sans-serif;
+}
+a {
+  color: var(--ac);
+}
+h1,
+h2,
+h3 {
+  font-family: "Rubik Wet Paint", cursive, system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.hero.container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  min-height: 520px;
+}
+.hero .in {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 12vh;
+  text-align: center;
+  pointer-events: none;
+}
+.hero .in > * {
+  pointer-events: auto;
+}
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 18px #000;
+}
+.hero p {
+  color: var(--mut);
+  max-width: 520px;
+  text-shadow: 0 0 8px #000;
+}
